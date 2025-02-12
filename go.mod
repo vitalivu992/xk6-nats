@@ -1,11 +1,12 @@
-module github.com/ydarias/xk6-nats
+module github.com/vitalivu992/xk6-nats
 
-go 1.19
+go 1.22
 
 require (
-	github.com/dop251/goja v0.0.0-20230828202809-3dbe69dd2b8e
-	github.com/nats-io/nats.go v1.28.0
-	go.k6.io/k6 v0.46.0
+	github.com/grafana/sobek v0.0.0-20241024150027-d91f02b05e9b
+	github.com/nats-io/nats.go v1.39.0
+	go.k6.io/k6 v0.56.0
+    google.golang.org/genproto v0.0.0-20240822170219-fc7c04adadcd
 )
 
 require (

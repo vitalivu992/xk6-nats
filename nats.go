@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/dop251/goja"
+	"github.com/grafana/sobek"
 	natsio "github.com/nats-io/nats.go"
 	"go.k6.io/k6/js/common"
 	"go.k6.io/k6/js/modules"
@@ -53,13 +53,13 @@ func (mi *Nats) Exports() modules.Exports {
 	}
 }
 
-func (n *Nats) client(c goja.ConstructorCall) *goja.Object {
+func (n *Nats) client(c sobek.ConstructorCall) *sobek.Object {
 	rt := n.vu.Runtime()
 
 	var cfg Configuration
 	err := rt.ExportTo(c.Argument(0), &cfg)
 	if err != nil {
-		common.Throw(rt, fmt.Errorf("Nats constructor expect Configuration as it's argument: %w", err))
+		common.Throw(rt, fmt.Errorf("Nats constructor expects Configuration as its argument: %w", err))
 	}
 
 	natsOptions := natsio.GetDefaultOptions()
